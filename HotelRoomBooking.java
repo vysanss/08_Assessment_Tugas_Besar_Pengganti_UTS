@@ -2,25 +2,25 @@ import java.util.Date;
 
 public class HotelRoomBooking {
 
-    private String namaPemesan;
-    private String nomorKTP;
-    private String nomorTelepon;
-    private String email;
-    private String jenisKelamin;
-    private String jenisKamar;
-    private int jumlahTamu;
-    private int jumlahMalam;
-    private double hargaPerMalam;
-    private String kodeVoucher;
-    private boolean sudahDibayar;
-    private Date tanggalCheckin;
-    private Date tanggalCheckout;
-    private boolean statusAktif;
+    // ...existing attributes...
 
-    public HotelRoomBooking(String namaPemesan, String nomorKTP, String nomorTelepon, String email, String jenisKelamin,
-            String jenisKamar, int jumlahTamu, int jumlahMalam, double hargaPerMalam,
-            Date tanggalCheckin, Date tanggalCheckout, boolean statusAktif,
-            String kodeVoucher, boolean sudahDibayar) {
+    public void kirimEmailKonfirmasi() {
+        if (email != null && !email.isEmpty()) {
+            System.out.println("Mengirim email konfirmasi ke: " + email);
+            System.out.println("Detail pemesanan telah dikirim ke email Anda.");
+        } else {
+            System.out.println("Email tidak tersedia. Tidak dapat mengirim konfirmasi.");
+        }
+    }
+
+    public void redeemVoucher(String kode) {
+        if (kode != null && kode.equalsIgnoreCase(kodeVoucher)) {
+            System.out.println("Voucher berhasil digunakan! Diskon sebesar Rp 50.000 telah diterapkan.");
+        } else {
+            System.out.println("Kode voucher tidak valid atau tidak tersedia.");
+        }
+    }
+}
 
         this.namaPemesan = namaPemesan;
         this.nomorKTP = nomorKTP;
